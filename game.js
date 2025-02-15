@@ -12,4 +12,13 @@ function calculateScore(events, playerData) {
             resolve(score);
         }, 2000); // 2-second delay
     });
-}
+  }
+  function initializeGame() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Game initialized successfully!");
+        resolve();
+      }, 2000);
+    });
+  }
+
