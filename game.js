@@ -45,4 +45,3 @@ function checkGameOver() {
       }, 700);   });
   }
 
-
