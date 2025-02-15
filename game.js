@@ -1,4 +1,21 @@
-function calculateScore(events, playerData) {
+function movePlayer(direction) {
+    return new Promise((resolve, reject) => {
+      console.log(`Moving player ${direction}...`);
+      setTimeout(() => {
+        console.log(`Player moved ${direction}`);
+        resolve();
+      }, 500);
+    });
+  }
+  function initializeGame() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Game initialized successfully!");
+        resolve();
+      }, 2000);
+    });
+  }
+  function calculateScore(events, playerData) {
     return new Promise((resolve) => {
         // Simulate an asynchronous scoring process with a 2-second delay
         setTimeout(() => {
@@ -12,14 +29,20 @@ function calculateScore(events, playerData) {
             resolve(score);
         }, 2000); // 2-second delay
     });
-  }
-  function initializeGame() {
-    return new Promise((resolve) => {
+}
+function checkGameOver() {
+    return new Promise((resolve, reject) => {
+      console.log('Checking if game is over...');
       setTimeout(() => {
-        console.log("Game initialized successfully!");
-        resolve();
-      }, 2000);
-    });
+        const gameOver = Math.random() > 0.5; 
+        if (gameOver) {
+          console.log('Game over!');
+          resolve(true);
+        } else {
+          console.log('Continue playing.');
+          resolve(false);
+        }
+      }, 700);   });
   }
 
 
