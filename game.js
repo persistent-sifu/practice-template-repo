@@ -1,3 +1,34 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function movePlayer(direction) {
     return new Promise((resolve, reject) => {
       console.log(`Moving player ${direction}...`);
