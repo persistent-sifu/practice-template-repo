@@ -15,3 +15,4 @@ function movePlayer(direction) {
       }, 2000);
     });
   }
+
