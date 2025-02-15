@@ -1,10 +1,16 @@
-function movePlayer(direction) {
-    return new Promise((resolve, reject) => {
-      console.log(`Moving player ${direction}...`);
-      setTimeout(() => {
-        console.log(`Player moved ${direction}`);
-        resolve();
-      }, 500);
+function calculateScore(events, playerData) {
+    return new Promise((resolve) => {
+        // Simulate an asynchronous scoring process with a 2-second delay
+        setTimeout(() => {
+            // Simple scoring logic: sum of event points multiplied by player multiplier
+            const score = events.reduce((total, event) => total + event.points, 0) * playerData.multiplier;
+
+            // Log the calculated score
+            console.log(`Calculated Score: ${score}`);
+
+            // Resolve the Promise with the calculated score
+            resolve(score);
+        }, 2000); // 2-second delay
     });
   }
   function initializeGame() {
@@ -15,4 +21,5 @@ function movePlayer(direction) {
       }, 2000);
     });
   }
+
 
